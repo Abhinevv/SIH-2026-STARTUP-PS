@@ -5,6 +5,7 @@ import { Sidebar } from './components/layout/Sidebar';
 import { DemoStoryNavigator } from './components/layout/DemoStoryNavigator';
 
 import { DashboardView } from './components/dashboard/DashboardView';
+import { StartupDashboardView } from './components/startup/StartupDashboardView';
 import { ChallengeBuilderView } from './components/challenges/ChallengeBuilderView';
 import { StartupMatchingView } from './components/matching/StartupMatchingView';
 import { ExpertEvaluationView } from './components/evaluation/ExpertEvaluationView';
@@ -36,10 +37,8 @@ export function App() {
 
   const handleNavigate = (tab: NavigationTab) => {
     setActiveTab(tab);
-    if (tab === 'startup-portal') {
+    if (tab === 'startup-dashboard' || tab === 'startup-portal') {
       setCurrentRole('startup');
-    } else {
-      setCurrentRole('officer');
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -49,19 +48,22 @@ export function App() {
     setSelectedStartup(found);
   };
 
+  const handleChangeRole = (role: UserRole) => {
+    setCurrentRole(role);
+    if (role === 'startup') {
+      setActiveTab('startup-dashboard');
+    } else {
+      setActiveTab('dashboard');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
       {/* Top Enterprise Government Header */}
       <Header
         currentRole={currentRole}
-        onChangeRole={(role) => {
-          setCurrentRole(role);
-          if (role === 'startup') {
-            setActiveTab('startup-portal');
-          } else {
-            setActiveTab('dashboard');
-          }
-        }}
+        onChangeRole={handleChangeRole}
         onNavigateTab={handleNavigate}
         onOpenNotifications={() => handleNavigate('notifications')}
         onOpenAuditLog={() => setIsAuditLogOpen(true)}
@@ -83,18 +85,28 @@ export function App() {
           activeTab={activeTab}
           onSelectTab={handleNavigate}
           currentRole={currentRole}
-          onChangeRole={setCurrentRole}
+          onChangeRole={handleChangeRole}
         />
 
         {/* Dynamic Main Workspace Content */}
         <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 gov-grid-pattern">
           <div className="max-w-7xl mx-auto">
+            {/* Government Officer Dashboard */}
             {activeTab === 'dashboard' && (
               <DashboardView
                 onNavigateTab={handleNavigate}
                 onOpenCreateChallenge={() => handleNavigate('challenges')}
                 onOpenAIInsights={() => setIsAIInsightsOpen(true)}
                 onOpenAuditLog={() => setIsAuditLogOpen(true)}
+              />
+            )}
+
+            {/* Dedicated Startup Dashboard */}
+            {activeTab === 'startup-dashboard' && (
+              <StartupDashboardView
+                onNavigateTab={handleNavigate}
+                onOpenExplainability={() => setIsExplainabilityOpen(true)}
+                onOpenDossier={() => setIsDossierOpen(true)}
               />
             )}
 

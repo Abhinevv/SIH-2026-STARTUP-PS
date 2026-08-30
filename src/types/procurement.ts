@@ -1,5 +1,6 @@
 export type NavigationTab = 
   | 'dashboard' 
+  | 'startup-dashboard'
   | 'challenges' 
   | 'matching' 
   | 'evaluations' 
@@ -228,9 +229,9 @@ export interface ProcurementTemplate {
   category: 'problem_statement' | 'evaluation_criteria' | 'contract_sla' | 'scale_memorandum';
   title: string;
   gfrRule: string;
-  description: string;
   complianceLevel: string;
   lastUpdated: string;
+  description: string;
   sections: {
     heading: string;
     content: string;
