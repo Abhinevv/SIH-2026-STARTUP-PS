@@ -27,20 +27,20 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-3.5">
           <div className="flex items-center gap-3">
             {/* Ashoka/Gov Seal representation */}
-            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-xs text-lg">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-xs text-lg shrink-0">
               🏛️
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-[11px] uppercase font-extrabold tracking-wider text-slate-500">
-                  Government of India
+                  Govt of Maharashtra • MSInS
                 </span>
                 <span className="text-[10px] bg-blue-50 text-blue-800 font-extrabold px-2 py-0.5 rounded border border-blue-200">
-                  GFR 2017 Rule 194
+                  SIH PS #26136 • GFR 194
                 </span>
               </div>
               <h1 className="text-[15px] font-bold text-slate-900 tracking-tight">
-                National Innovation Procurement Portal (NIPP)
+                INNO-PROC • Startup Innovation Procurement Command Center
               </h1>
             </div>
           </div>
@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input 
               type="text" 
-              placeholder="Search challenges, DPIIT startups, pilot IDs..." 
+              placeholder="Search challenges, DPIIT startups, pilot IDs, PS #26136..." 
               className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-[13px] text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all shadow-2xs font-medium"
             />
             <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] text-slate-500 bg-slate-200/80 px-1.5 py-0.5 rounded border border-slate-300 font-mono">
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Session Security Indicator */}
           <div className="hidden xl:flex items-center gap-2 pl-2 border-l border-slate-200 text-[12px] text-slate-500 font-medium">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span>NIC Secure Node #04</span>
+            <span>MahaState Secure Node</span>
           </div>
         </div>
       </div>

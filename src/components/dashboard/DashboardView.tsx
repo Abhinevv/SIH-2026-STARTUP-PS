@@ -2,6 +2,10 @@ import React from 'react';
 import { 
   Plus, 
   Shield, 
+  CheckCircle2,
+  Building2,
+  Sparkles,
+  ArrowRight
 } from 'lucide-react';
 import { KPICards } from './KPICards';
 import { InnovationPipeline } from './InnovationPipeline';
@@ -25,6 +29,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 }) => {
   return (
     <div className="space-y-6 pb-12">
+      {/* SIH Problem Statement #26136 Banner */}
+      <div className="bg-gradient-to-r from-blue-50 via-indigo-50/50 to-blue-50 border border-blue-200 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-xs">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
+            26136
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-900 bg-blue-100 px-2 py-0.5 rounded border border-blue-300">
+                SIH 2026 Problem Statement
+              </span>
+              <span className="text-xs text-slate-500 font-semibold">
+                Maharashtra State Innovation Society (MSInS), Govt of Maharashtra
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-slate-900 mt-0.5">
+              Startup Friendly Public Procurement Mechanism: Identify, Pilot, Procure & Scale
+            </h3>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="text-xs bg-emerald-100 text-emerald-900 border border-emerald-300 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+            <span>100% PS-Mapped Architecture</span>
+          </span>
+        </div>
+      </div>
+
       {/* Officer Top Greeting & Action Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 rounded-2xl p-6 shadow-xs">
         <div className="space-y-1">
@@ -114,8 +147,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-[11px] text-slate-500 font-medium">
-            <span>Ministry of Finance Reference</span>
-            <span className="text-blue-700 font-mono font-bold">OM-2023-F.1/26</span>
+            <span>Govt of Maharashtra Ref</span>
+            <span className="text-blue-700 font-mono font-bold">MSInS/INNO/2026</span>
           </div>
         </div>
       </div>
