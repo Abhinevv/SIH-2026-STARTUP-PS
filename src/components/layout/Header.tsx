@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <h1 className="text-[15px] font-bold text-slate-900 tracking-tight">
-                INNO-PROC • Startup Innovation Procurement Command Center
+                MahaStartup • Innovation Procurement Command Center
               </h1>
             </div>
           </div>

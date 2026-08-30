@@ -11,7 +11,6 @@ import {
   BellRing, 
   SlidersHorizontal, 
   Shield,
-  Building2,
 } from 'lucide-react';
 import { NavigationTab } from '../../types/procurement';
 
@@ -119,20 +118,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div>
         <div className="p-5 border-b border-slate-100 bg-slate-50/70">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 flex items-center justify-center shadow-md text-white font-black text-xl tracking-wider shrink-0">
-              IP
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-blue-600 flex items-center justify-center shadow-md text-white font-black text-xl tracking-wider shrink-0">
+              MS
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-[17px] font-extrabold tracking-wider text-slate-900">
-                  INNO-PROC
+                  MahaStartup
                 </span>
                 <span className="text-[9px] font-bold uppercase bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded border border-blue-200">
-                  GOV v2.6
+                  MSInS v2.6
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium tracking-tight mt-0.5">
-                National Procurement Platform
+                Govt Innovation Procurement
               </p>
             </div>
           </div>
@@ -234,7 +233,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="flex items-center gap-1 mt-0.5">
               <Shield className="w-3 h-3 text-amber-600" />
               <span className="text-[10px] text-amber-800 font-mono font-bold">
-                Level-1 Approver (GeM)
+                Level-1 Approver (GeM / MahaGEMS)
               </span>
             </div>
           </div>

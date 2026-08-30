@@ -1,6 +1,7 @@
-# 🏛️ INNO-PROC • Government Innovation Procurement Command Center
+# 🏛️ MahaStartup • Maharashtra Innovation Procurement Command Center
 
 ### 🏆 Smart India Hackathon (SIH 2026) Official Solution
+- **Solution Name**: **MahaStartup**
 - **Problem Statement ID**: `26136`
 - **Problem Statement Title**: *Startup friendly public procurement mechanism that enables government departments to identify, pilot, procure, and scale innovative solutions from eligible startups*
 - **Organization**: Government of Maharashtra
@@ -10,11 +11,11 @@
 
 ---
 
-## 🎯 Does INNO-PROC Solve Problem Statement #26136? (100% Direct Match)
+## 🎯 Does MahaStartup Solve Problem Statement #26136? (100% Direct Match)
 
-| SIH PS #26136 Requirement (Govt of Maharashtra) | How INNO-PROC Solves It | Delivered Module |
+| SIH PS #26136 Requirement (Govt of Maharashtra) | How MahaStartup Solves It | Delivered Module |
 | :--- | :--- | :--- |
-| **1. Formulate Outcome-Based Problem Statements**<br>*Departments struggle to define clear, outcome-driven tenders.* | **AI Challenge Structuring Studio**: Converts rough civic pain points into standardized tenders (`INNO-2026-014`) with quantifiable KPI baselines (e.g. Fuel ↓15%, Pickups ↓50%). | 📝 `Module 02: AI Challenge Builder` |
+| **1. Formulate Outcome-Based Problem Statements**<br>*Departments struggle to define clear, outcome-driven tenders.* | **AI Challenge Structuring Studio**: Converts rough civic pain points into standardized tenders (`MAHA-2026-014`) with quantifiable KPI baselines (e.g. Fuel ↓15%, Pickups ↓50%). | 📝 `Module 02: AI Challenge Builder` |
 | **2. Startup Discovery & Eligibility Screening**<br>*Startups blocked by prior-turnover/experience criteria.* | **AI Semantic Discovery**: Eliminates arbitrary 3-year balance sheet barriers by screening startups on core algorithmic capabilities, tech stack fit, and DPIIT verification. | 🤖 `Module 03: AI Startup Discovery` |
 | **3. Evaluate Novel & Unproven Technologies**<br>*Departments lack tools to assess emerging AI/IoT solutions.* | **Explainable AI (XAI) + 6-Factor Committee Matrix**: Deep dimensional breakdown (Tech 95%, Domain 92%, Budget 87%, Readiness 91%) with semantic graph mapping. | 👨‍⚖️ `Module 04: Expert Evaluation` |
 | **4. Structure Controlled Sandbox Pilots**<br>*Need safe, regulated environments to test prototypes.* | **90-Day Sandbox Pilot Engine**: Controlled field testbeds (e.g. Pune Wards 4, 7, 9) with structured milestone timelines and risk controls. | 📊 `Module 05: Active Pilot Sandbox` |
@@ -42,7 +43,7 @@
 
 ## ⚖️ Core Governance Model: "AI Recommends → Human Approves"
 
-Public sector procurement cannot be handed over to autonomous black-box algorithms. INNO-PROC enforces **Human-in-the-Loop Governance**:
+Public sector procurement cannot be handed over to autonomous black-box algorithms. **MahaStartup** enforces **Human-in-the-Loop Governance**:
 1. **AI Role**: Ingestion, tender structuring, semantic matching, risk detection, telemetry analysis.
 2. **Officer Role**: Formal committee evaluation, pilot milestone sign-off, and **cryptographic digital signature of Sanction Orders** by authorized officers (*Shri Rajesh Verma, IAS*).
 
@@ -53,7 +54,7 @@ Public sector procurement cannot be handed over to autonomous black-box algorith
 The platform includes a built-in, 1-click guided walkthrough following the **Pune Municipal Solid Waste Route Optimization** lifecycle:
 
 1. **The Problem**: High diesel costs, traffic idle time, and missed bin collection across 14 municipal wards.
-2. **AI Challenge Builder**: Formulates Challenge `INNO-2026-014` with ₹25.00L budget, 90-day sandbox pilot, and target fuel reduction (≥15%).
+2. **AI Challenge Builder**: Formulates Challenge `MAHA-2026-014` with ₹25.00L budget, 90-day sandbox pilot, and target fuel reduction (≥15%).
 3. **AI Startup Matching**: **RouteAI Technologies Pvt Ltd (Pune)** matches at **92%** (Low Risk) against SmartRoute Labs (86%) and UrbanTech AI (81%).
 4. **Explainable AI (XAI)**: Deep dive into the 5-factor compatibility breakdown and validated municipal deployment evidence.
 5. **Expert Evaluation**: Committee awards **90.0 / 100** consensus score and sanctions ₹8.20L pilot contract under GFR 194.
@@ -139,6 +140,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ---
 
 ## 👥 Hackathon Submission
+- **Project**: **MahaStartup** — Innovation Procurement Command Center
 - **Hackathon**: Smart India Hackathon (SIH 2026)
 - **Problem Statement**: ID 26136 — Government of Maharashtra (MSInS)
 - **Repository**: [https://github.com/Abhinevv/SIH-2026-STARTUP-PS](https://github.com/Abhinevv/SIH-2026-STARTUP-PS)

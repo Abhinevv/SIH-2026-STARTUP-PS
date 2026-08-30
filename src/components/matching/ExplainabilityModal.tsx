@@ -98,7 +98,7 @@ export const ExplainabilityModal: React.FC<ExplainabilityModalProps> = ({
 
             <div className="p-3.5 bg-white rounded-lg border border-slate-200 font-mono text-xs text-slate-800 space-y-2 shadow-2xs">
               <div className="text-blue-700 font-bold">
-                Challenge: INNO-2026-014 (Pune Waste Route Optimization)
+                Challenge: MAHA-2026-014 (Pune Waste Route Optimization)
               </div>
               <div className="pl-4 border-l-2 border-slate-300 space-y-1.5 text-[11px]">
                 <div className="flex items-start gap-2">

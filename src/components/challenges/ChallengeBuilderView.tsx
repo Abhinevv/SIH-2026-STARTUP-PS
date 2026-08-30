@@ -202,7 +202,7 @@ export const ChallengeBuilderView: React.FC<ChallengeBuilderViewProps> = ({
                 <span>How AI Solves Government Tender Ambiguity</span>
               </div>
               <p className="text-[11px] text-slate-700 leading-relaxed font-medium">
-                Traditional tenders fail when requirements are vague or feature-centric. INNO-PROC AI structures problems into <strong>quantifiable baseline → target variance metrics</strong> with cryptographic telemetry validation rules.
+                Traditional tenders fail when requirements are vague or feature-centric. MahaStartup AI structures problems into <strong>quantifiable baseline → target variance metrics</strong> with cryptographic telemetry validation rules.
               </p>
             </div>
           </div>

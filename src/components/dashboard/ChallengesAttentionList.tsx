@@ -37,7 +37,7 @@ export const ChallengesAttentionList: React.FC<ChallengesAttentionListProps> = (
             <div className="space-y-1.5 flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                  INNO-2026-014
+                  MAHA-2026-014
                 </span>
                 <h4 className="text-sm font-bold text-slate-900 truncate">
                   Smart Waste Collection Optimization
@@ -82,14 +82,14 @@ export const ChallengesAttentionList: React.FC<ChallengesAttentionListProps> = (
             <div className="space-y-1.5 flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                  INNO-2026-009
+                  MAHA-2026-009
                 </span>
                 <h4 className="text-sm font-bold text-slate-900 truncate">
                   Smart Water Leakage Detection
                 </h4>
               </div>
               <p className="text-xs text-slate-500 font-medium truncate">
-                Bengaluru Water Supply & Sewerage Board (BWSSB)
+                Maharashtra Urban Water Directorate (BWSSB/CIDCO)
               </p>
 
               <div className="flex items-center gap-3 pt-0.5 text-xs text-slate-700 flex-wrap">

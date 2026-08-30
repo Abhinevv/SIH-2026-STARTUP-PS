@@ -68,7 +68,7 @@ export const ExpertEvaluationView: React.FC<ExpertEvaluationViewProps> = ({
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono font-bold text-blue-800 bg-blue-100 px-2 py-0.5 rounded border border-blue-300">
-                INNO-2026-014 Evaluation
+                MAHA-2026-014 Evaluation
               </span>
               <span className="text-xs text-slate-500 font-medium">Candidate:</span>
               <span className="text-sm font-extrabold text-slate-900">

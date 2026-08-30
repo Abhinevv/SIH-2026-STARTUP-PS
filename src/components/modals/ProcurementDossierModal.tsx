@@ -54,7 +54,7 @@ export const ProcurementDossierModal: React.FC<ProcurementDossierModalProps> = (
               GOVERNMENT OF INDIA • MINISTRY OF HOUSING & URBAN AFFAIRS
             </div>
             <div className="text-[11px] text-slate-500 font-mono">
-              National Innovation Procurement Portal • GFR 2017 Rule 194 Fast-Track Cell
+              MahaStartup Innovation Procurement Portal • GFR 2017 Rule 194 Fast-Track Cell
             </div>
             <div className="text-sm font-black text-slate-900 pt-2 uppercase tracking-wide">
               FORMAL SCALE SANCTION ORDER & GeM CATALOGUE AUTHORIZATION
@@ -68,7 +68,7 @@ export const ProcurementDossierModal: React.FC<ProcurementDossierModalProps> = (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs">
             <div>
               <div className="text-slate-500 text-[10px] font-bold">CHALLENGE CODE</div>
-              <div className="font-bold text-slate-900 font-mono mt-0.5">INNO-2026-014</div>
+              <div className="font-bold text-slate-900 font-mono mt-0.5">MAHA-2026-014</div>
             </div>
             <div>
               <div className="text-slate-500 text-[10px] font-bold">SELECTED STARTUP</div>
@@ -127,7 +127,7 @@ export const ProcurementDossierModal: React.FC<ProcurementDossierModalProps> = (
               </div>
               <div className="font-bold text-slate-900">{mockScaleReadiness.officerApproval?.officerName}</div>
               <div className="text-[10px] text-slate-500 font-medium">{mockScaleReadiness.officerApproval?.designation}</div>
-              <div className="text-[10px] text-blue-700 font-mono font-bold">Ministry of Housing & Urban Affairs, New Delhi</div>
+              <div className="text-[10px] text-blue-700 font-mono font-bold">Government of Maharashtra, Mantralaya, Mumbai</div>
             </div>
           </div>
         </div>

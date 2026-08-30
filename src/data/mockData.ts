@@ -9,27 +9,27 @@ import {
 } from '../types/procurement';
 
 export const mockPipelineStages: PipelineStageInfo[] = [
-  { key: 'problem', label: 'Government Problems', count: 18, description: 'Citizen & department pain points ingested', trend: '+4 this month', iconName: 'HelpCircle' },
+  { key: 'problem', label: 'Civic Problems', count: 18, description: 'Citizen & department pain points ingested', trend: '+4 this month', iconName: 'HelpCircle' },
   { key: 'challenge', label: 'Challenges', count: 12, description: 'AI-structured procurement problem statements', trend: '↑ 18% vs Q3', iconName: 'FileCode' },
-  { key: 'matching', label: 'AI Matching', count: 48, description: 'DPIIT startups semantically mapped', trend: '↑ 24% matches', iconName: 'Cpu' },
+  { key: 'matching', label: 'AI Matching', count: 48, description: 'DPIIT & Maha startups semantically mapped', trend: '↑ 24% matches', iconName: 'Cpu' },
   { key: 'evaluation', label: 'Evaluation', count: 9, description: 'Multi-criteria expert panel reviews', trend: '3 urgent reviews', iconName: 'Award' },
   { key: 'pilot', label: 'Pilots', count: 6, description: 'Active sandbox testbeds & telemetry', trend: '↑ 12% on-track', iconName: 'PlayCircle' },
   { key: 'validation', label: 'Validation', count: 4, description: 'Third-party KPI verification audits', trend: '100% verified', iconName: 'CheckCircle2' },
-  { key: 'scale', label: 'Scale', count: 3, description: 'State-wide / National GeM procurement ready', trend: '₹14.2 Cr pipeline', iconName: 'TrendingUp' },
+  { key: 'scale', label: 'Scale', count: 3, description: 'MahaGEMS / GeM procurement ready', trend: '₹14.2 Cr pipeline', iconName: 'TrendingUp' },
 ];
 
 export const mockChallenges: Challenge[] = [
   {
     id: 'ch-014',
-    code: 'INNO-2026-014',
+    code: 'MAHA-2026-014',
     title: 'AI-Based Dynamic Waste Collection Optimization',
     department: 'Solid Waste Management Division',
-    ministry: 'Pune Municipal Corporation',
+    ministry: 'Pune Municipal Corporation (Govt of Maharashtra)',
     budgetInLakhs: 25.0,
     pilotDurationDays: 90,
     stage: 'evaluation',
     statusText: 'Evaluation Phase (4 Shortlisted)',
-    rawProblemText: 'Inefficient garbage collection routes leading to high diesel fuel consumption, delayed truck dispatches, and missed bin pickups across 14 high-density municipal wards.',
+    rawProblemText: 'Inefficient garbage collection routes leading to high diesel fuel consumption, delayed truck dispatches, and missed bin pickups across 14 high-density municipal wards in Pune.',
     problemStatement: 'Pune Municipal Corporation requires a dynamic, algorithmic routing & dispatch engine that integrates with existing vehicle GPS and bin sensor telemetry to optimize daily collection paths, reduce diesel expenditure by >=15%, and minimize citizen missed-pickup grievances by >=50%.',
     rootCauseAnalysis: [
       'Static legacy route sheets ignore real-time bin filling levels',
@@ -61,10 +61,10 @@ export const mockChallenges: Challenge[] = [
   },
   {
     id: 'ch-009',
-    code: 'INNO-2026-009',
+    code: 'MAHA-2026-009',
     title: 'Smart Acoustic Water Leakage Detection & Pressure Optimization',
     department: 'Water Supply & Sewerage Board',
-    ministry: 'Bengaluru Water Supply (BWSSB)',
+    ministry: 'Maharashtra Urban Water Directorate (BWSSB/CIDCO)',
     budgetInLakhs: 32.0,
     pilotDurationDays: 120,
     stage: 'pilot',
@@ -91,22 +91,22 @@ export const mockChallenges: Challenge[] = [
     },
     gfrCompliance: {
       rule194Cleared: true,
-      cpcApprovalStatus: 'Approved by BWSSB Board',
+      cpcApprovalStatus: 'Approved by Board',
       procurementMethod: 'GFR Rule 194'
     },
     createdAt: '2026-07-04'
   },
   {
     id: 'ch-018',
-    code: 'INNO-2026-018',
+    code: 'MAHA-2026-018',
     title: 'Edge-AI Adaptive Traffic Signal Coordination at Urban Chokepoints',
-    department: 'Urban Mobility & Traffic Police',
-    ministry: 'Delhi Traffic Management Authority',
+    department: 'Urban Mobility & Traffic Authority',
+    ministry: 'Mumbai Metropolitan Region Development Authority (MMRDA)',
     budgetInLakhs: 45.0,
     pilotDurationDays: 90,
     stage: 'matching',
     statusText: 'AI Matching (14 Startups Screened)',
-    rawProblemText: 'Fixed timer signals creating massive commuter delays and ambulance blockades during peak rush hours.',
+    rawProblemText: 'Fixed timer signals creating massive commuter delays and emergency vehicle blockades during peak rush hours.',
     problemStatement: 'Computer vision video analytics edge devices at 12 critical intersections to dynamically adjust green light splits based on queue length and emergency vehicle priority.',
     rootCauseAnalysis: ['Static pre-timed signal controllers without real-time vehicle density adaptation'],
     desiredOutcomes: [
@@ -151,7 +151,7 @@ export const mockStartups: StartupMatch[] = [
     positiveEvidence: [
       '3 proven municipal deployments (Nagpur, Surat Smart City pilot projects)',
       'Proprietary GIS-based Vehicle Routing Problem (VRP) solving in <400ms',
-      'Pre-integrated with standard Indian Smart City ICCC / Bharat-VTS data specs',
+      'Pre-integrated with Maharashtra ICCC / Bharat-VTS data specs',
       'Demonstrated 19.4% average fuel reduction in Nagpur pilot trial'
     ],
     riskFlags: [
@@ -248,7 +248,7 @@ export const mockExpertEvaluation: ExpertEvaluationData = {
     { name: 'Technical Feasibility & Architecture', weight: 25, score: 91, benchmark: 75, comments: 'Robust microservice architecture; demonstrates sub-500ms route calculation on 40-node graphs.' },
     { name: 'Innovation & Algorithmic Novelty', weight: 20, score: 94, benchmark: 70, comments: 'Novel integration of graph reinforcement learning with real-time Indian traffic patterns.' },
     { name: 'Cost Effectiveness & RoI', weight: 15, score: 84, benchmark: 70, comments: 'Budget request of ₹8.2L for 90-day pilot is well within the ₹25L sanctioned ceiling. Estimated 6-month payback.' },
-    { name: 'Scalability & Interoperability', weight: 15, score: 88, benchmark: 75, comments: 'Native compliance with Ministry of Housing & Urban Affairs (MoHUA) ICCC standards.' },
+    { name: 'Scalability & Interoperability', weight: 15, score: 88, benchmark: 75, comments: 'Native compliance with Maharashtra Urban Development & MoHUA ICCC standards.' },
     { name: 'Security & Data Governance', weight: 15, score: 90, benchmark: 80, comments: 'Data hosted entirely on MeitY-empanelled Indian Cloud (NIC/AWS Mumbai); encrypted in transit and at rest.' },
     { name: 'Pilot Readiness & Time to Deploy', weight: 10, score: 93, benchmark: 70, comments: 'Can begin fleet integration within 7 days of contract sanction with zero vehicle modifications.' }
   ],
@@ -263,7 +263,7 @@ export const mockExpertEvaluation: ExpertEvaluationData = {
 
 export const mockPilotProject: PilotProject = {
   id: 'PLT-2026-088',
-  challengeCode: 'INNO-2026-014',
+  challengeCode: 'MAHA-2026-014',
   challengeTitle: 'AI-Based Dynamic Waste Collection Optimization',
   department: 'Pune Municipal Corporation - Solid Waste Management',
   startupName: 'RouteAI Technologies Pvt Ltd',
@@ -352,16 +352,16 @@ export const mockScaleReadiness: ScaleReadinessData = {
     { id: 'chk-1', title: 'Target KPIs Achieved & Exceeded', passed: true, description: 'Fuel reduced by 18% (target 15%), Missed pickups reduced by 64% (target 50%).' },
     { id: 'chk-2', title: 'Pilot Completed Successfully', passed: true, description: '47 days of live field testing with zero system crashes or service disruptions.' },
     { id: 'chk-3', title: 'Independent Evidence Verified', passed: true, description: 'IOCL fuel logs and PMC 311 citizen grievance logs independently audited and cryptographically sealed.' },
-    { id: 'chk-4', title: 'Security & GFR 2017 Compliance', passed: true, description: 'MeitY data localisation verified; complies with GFR Rule 194 & Rule 149 for GeM transition.' },
+    { id: 'chk-4', title: 'Security & GFR 2017 Compliance', passed: true, description: 'MeitY data localisation verified; complies with GFR Rule 194 & Rule 149 for GeM / MahaGEMS transition.' },
     { id: 'chk-5', title: 'Human Officer Approval Required', passed: true, description: 'Procurement sanction order requires digital signature of Authorized Joint Secretary.' }
   ],
   officerApproval: {
     isApproved: false,
     officerName: 'Shri Rajesh Verma, IAS',
-    designation: 'Joint Secretary (Innovation & Public Procurement)',
+    designation: 'Joint Secretary (Public Procurement), Govt of Maharashtra',
     approvedAt: '',
-    sanctionOrderNumber: 'GOI-INNO-PROC-2026/PUNE-SWM-088',
-    procurementRoute: 'Direct GeM Category Creation via GFR Rule 194 Fast-Track Scale',
+    sanctionOrderNumber: 'MAHA-STARTUP-2026/PUNE-SWM-088',
+    procurementRoute: 'Direct GeM & MahaGEMS Category Creation via GFR Rule 194 Fast-Track Scale',
     estimatedPanStateBudgetLakhs: 380.0,
     digitalSignatureSha: 'sha256:e8f9a0c1b72354e69d71c890fa21e64b85c391d842',
     officialRemarks: 'Validated outcome demonstrates recurring municipal savings of ~₹1.8 Cr annually across all 15 wards. Sanction granted for state-wide procurement onboarding.'
@@ -369,11 +369,11 @@ export const mockScaleReadiness: ScaleReadinessData = {
 };
 
 export const mockAuditLogs: AuditLogEntry[] = [
-  { id: 'aud-109', timestamp: '2026-08-30 09:15:22', officer: 'Shri Rajesh Verma, IAS', role: 'Joint Secretary', action: 'SCALE_READINESS_REVIEW', entity: 'Pilot PLT-2026-088', referenceId: 'INNO-2026-014', hash: 'e8f9...4b85' },
+  { id: 'aud-109', timestamp: '2026-08-30 09:15:22', officer: 'Shri Rajesh Verma, IAS', role: 'Joint Secretary', action: 'SCALE_READINESS_REVIEW', entity: 'Pilot PLT-2026-088', referenceId: 'MAHA-2026-014', hash: 'e8f9...4b85' },
   { id: 'aud-108', timestamp: '2026-08-29 17:40:11', officer: 'Third-Party Auditor (PwC India)', role: 'Independent Auditor', action: 'EVIDENCE_VERIFIED', entity: 'IOCL Fuel Logs', referenceId: 'PMC-W4-W7', hash: 'c2a1...78ef' },
-  { id: 'aud-107', timestamp: '2026-08-28 11:30:00', officer: 'AI Procurement Engine', role: 'System Model 3.7', action: 'KPI_TELEMETRY_ANALYZE', entity: 'Telemetry Stream', referenceId: 'PLT-2026-088', hash: '89ba...5512' },
+  { id: 'aud-107', timestamp: '2026-08-28 11:30:00', officer: 'MahaStartup AI Engine', role: 'System Model 3.7', action: 'KPI_TELEMETRY_ANALYZE', entity: 'Telemetry Stream', referenceId: 'PLT-2026-088', hash: '89ba...5512' },
   { id: 'aud-106', timestamp: '2026-08-16 14:22:05', officer: 'Dr. Arvind Swaminathan', role: 'Tech Expert Chair', action: 'EXPERT_SCORE_SIGNED', entity: 'RouteAI Tech', referenceId: 'EVAL-014-01', hash: '4f5a...3319' },
-  { id: 'aud-105', timestamp: '2026-08-12 10:00:00', officer: 'Smt. Vandana Deshmukh, IAS', role: 'Addl Municipal Comm.', action: 'CHALLENGE_CREATED', entity: 'INNO-2026-014', referenceId: 'PMC-SWM', hash: '11e2...90aa' }
+  { id: 'aud-105', timestamp: '2026-08-12 10:00:00', officer: 'Smt. Vandana Deshmukh, IAS', role: 'Addl Municipal Comm.', action: 'CHALLENGE_CREATED', entity: 'MAHA-2026-014', referenceId: 'PMC-SWM', hash: '11e2...90aa' }
 ];
 
 export const mockAIIntelligenceSummary = {
@@ -383,9 +383,9 @@ export const mockAIIntelligenceSummary = {
   pilotsReadyForScaleCount: 4,
   kpiDefinitionsNeededCount: 3,
   insights: [
-    { id: 'ins-1', type: 'risk', title: '7 Potential Procurement Risks Detected', description: '2 startups lack ISO 27001 data certs; 1 pilot milestone in BWSSB project is 12 days overdue.', severity: 'high' },
+    { id: 'ins-1', type: 'risk', title: '7 Potential Procurement Risks Detected', description: '2 startups lack ISO 27001 data certs; 1 pilot milestone in urban water project is 12 days overdue.', severity: 'high' },
     { id: 'ins-2', type: 'opportunity', title: '4 Active Pilots Predicted Ready for Scale', description: 'Pune Waste Management and Surat Solar Grid have exceeded target KPIs with verified evidence.', severity: 'success' },
-    { id: 'ins-3', type: 'action', title: '3 Challenges Need Quantifiable Baseline Refinement', description: 'Delhi Traffic Challenge INNO-2026-018 requires sensor node calibration baselines prior to final evaluation.', severity: 'warning' },
-    { id: 'ins-4', type: 'match', title: 'High Semantic Density in Urban Mobility', description: 'Over 14 DPIIT-registered Indian startups matched with >85% weighted compatibility for recent smart mobility tenders.', severity: 'info' }
+    { id: 'ins-3', type: 'action', title: '3 Challenges Need Quantifiable Baseline Refinement', description: 'MMRDA Traffic Challenge MAHA-2026-018 requires sensor node calibration baselines prior to final evaluation.', severity: 'warning' },
+    { id: 'ins-4', type: 'match', title: 'High Semantic Density in Maharashtra Startups', description: 'Over 28 Maharashtra-registered DPIIT startups matched with >85% weighted compatibility for smart municipal tenders.', severity: 'info' }
   ]
 };
