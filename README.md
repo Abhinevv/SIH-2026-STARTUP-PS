@@ -15,16 +15,18 @@
 
 | SIH PS #26136 Requirement (Govt of Maharashtra) | How MahaStartup Solves It | Delivered Module |
 | :--- | :--- | :--- |
-| **1. Formulate Outcome-Based Problem Statements**<br>*Departments struggle to define clear, outcome-driven tenders.* | **AI Challenge Structuring Studio**: Converts rough civic pain points into standardized tenders (`MAHA-2026-014`) with quantifiable KPI baselines (e.g. Fuel ↓15%, Pickups ↓50%). | 📝 `Module 02: AI Challenge Builder` |
-| **2. Startup Discovery & Eligibility Screening**<br>*Startups blocked by prior-turnover/experience criteria.* | **AI Semantic Discovery**: Eliminates arbitrary 3-year balance sheet barriers by screening startups on core algorithmic capabilities, tech stack fit, and DPIIT verification. | 🤖 `Module 03: AI Startup Discovery` |
-| **3. Evaluate Novel & Unproven Technologies**<br>*Departments lack tools to assess emerging AI/IoT solutions.* | **Explainable AI (XAI) + 6-Factor Committee Matrix**: Deep dimensional breakdown (Tech 95%, Domain 92%, Budget 87%, Readiness 91%) with semantic graph mapping. | 👨‍⚖️ `Module 04: Expert Evaluation` |
-| **4. Structure Controlled Sandbox Pilots**<br>*Need safe, regulated environments to test prototypes.* | **90-Day Sandbox Pilot Engine**: Controlled field testbeds (e.g. Pune Wards 4, 7, 9) with structured milestone timelines and risk controls. | 📊 `Module 05: Active Pilot Sandbox` |
-| **5. Milestone-Based Contracting & Escrow**<br>*Startups face delayed payments and long sales cycles.* | **Milestone Escrow Tranche Tracker**: Transparent budget utilization (e.g. ₹5.12L / ₹8.20L utilized across Tranche 2/3). | 📊 `Module 05: Active Pilot Dashboard` |
-| **6. Empirical Performance Telemetry**<br>*Subjective claims lead to failed deployments.* | **Live Baseline vs Current Variance**: Real-time CAN-bus & sensor telemetry tracking **Fuel ↓18%**, **Pickups ↓64%**, and **Efficiency ↑26%**. | 📊 `Module 05: Telemetry Stream` |
-| **7. Independent Validation & IP/Data Governance**<br>*Need trusted 3rd-party audits and data localisation.* | **Independent Audit Lock**: Pre-configured verification certificates from IOCL, STQC, and MeitY Indian Cloud zone with cryptographic hashes. | 🛡️ `Module 08: 3rd-Party Validation` |
-| **8. Transition to Compliant Scale-Up & GeM**<br>*Pilots get stuck without a legal scale procurement route.* | **Scale Decision & GeM Transition**: Implements *"AI Recommends → Human Approves"*, generating official Government Sanction Orders for state-wide GeM listing. | 🏆 `Module 06: Scale Decision & GeM` |
-| **9. Macro Fiscal RoI & Impact Measurement**<br>*State-level visibility into innovation returns.* | **Cross-Pilot Impact Analytics**: Tracks statewide fiscal savings (₹4.28 Cr), carbon offset (142 Tons), and citizen satisfaction across all ULBs. | 📈 `Module 07: KPI & Impact` |
-| **10. Transparency & Compliance (CVC / CAG)**<br>*Risk of audit objections under public procurement rules.* | **Immutable Audit Trail Vault**: SHA-256 cryptographic logging of every officer action, committee score, and telemetry timestamp. | 🔒 `CVC Audit Trail Vault` |
+| **1. Standardized Legal & Procurement Templates**<br>*Need standard templates for problem statements, pilot agreements, IP/data clauses.* | **Template Manager Library**: Standardizes GFR Rule 194 Problem Formulations, Tripartite Sandbox Pilot Agreements, 6-Factor Matrices, and GeM Transition Memos. | 📄 `Module 09: Template Manager` |
+| **2. Dual Portals (Government & Startup)**<br>*Usability is essential for both public buyers and startup innovators.* | **Interactive Portal Switcher**: Dedicated Officer Command Center for IAS/evaluators and Startup Workspace for milestone escrow claims and live telemetry. | 👥 `Module 10: Dual User Portals` |
+| **3. Formulate Outcome-Based Problem Statements**<br>*Departments struggle to define clear, outcome-driven tenders.* | **AI Challenge Structuring Studio**: Converts rough civic pain points into standardized tenders (`MAHA-2026-014`) with quantifiable KPI baselines (e.g. Fuel ↓15%, Pickups ↓50%). | 📝 `Module 02: AI Challenge Builder` |
+| **4. Startup Discovery & Eligibility Screening**<br>*Startups blocked by prior-turnover/experience criteria.* | **AI Semantic Discovery**: Eliminates arbitrary 3-year balance sheet barriers by screening startups on core algorithmic capabilities, tech stack fit, and DPIIT verification. | 🤖 `Module 03: AI Startup Discovery` |
+| **5. Evaluate Novel & Unproven Technologies**<br>*Departments lack tools to assess emerging AI/IoT solutions.* | **Explainable AI (XAI) + 6-Factor Committee Matrix**: Deep dimensional breakdown (Tech 95%, Domain 92%, Budget 87%, Readiness 91%) with semantic graph mapping. | 👨‍⚖️ `Module 04: Expert Evaluation` |
+| **6. Structure Controlled Sandbox Pilots**<br>*Need safe, regulated environments to test prototypes.* | **90-Day Sandbox Pilot Engine**: Controlled field testbeds (e.g. Pune Wards 4, 7, 9) with structured milestone timelines and risk controls. | 📊 `Module 05: Active Pilot Sandbox` |
+| **7. Milestone-Based Contracting & Escrow**<br>*Startups face delayed payments and long sales cycles.* | **Milestone Escrow Tranche Tracker**: Transparent budget utilization (e.g. ₹5.12L / ₹8.20L utilized across Tranche 2/3). | 📊 `Module 05: Active Pilot Dashboard` |
+| **8. Empirical Performance Telemetry**<br>*Subjective claims lead to failed deployments.* | **Live Baseline vs Current Variance**: Real-time CAN-bus & sensor telemetry tracking **Fuel ↓18%**, **Pickups ↓64%**, and **Efficiency ↑26%**. | 📊 `Module 05: Telemetry Stream` |
+| **9. Independent Validation & IP/Data Governance**<br>*Need trusted 3rd-party audits and data localisation.* | **Independent Audit Lock**: Pre-configured verification certificates from IOCL, STQC, and MeitY Indian Cloud zone with cryptographic hashes. | 🛡️ `Module 08: 3rd-Party Validation` |
+| **10. Transition to Compliant Scale-Up & GeM**<br>*Pilots get stuck without a legal scale procurement route.* | **Scale Decision & GeM Transition**: Implements *"AI Recommends → Human Approves"*, generating official Government Sanction Orders for state-wide GeM listing. | 🏆 `Module 06: Scale Decision & GeM` |
+| **11. Macro Fiscal RoI & Impact Measurement**<br>*State-level visibility into innovation returns.* | **Cross-Pilot Impact Analytics**: Tracks statewide fiscal savings (₹4.28 Cr), carbon offset (142 Tons), and citizen satisfaction across all ULBs. | 📈 `Module 07: KPI & Impact` |
+| **12. Transparency & Compliance (CVC / CAG)**<br>*Risk of audit objections under public procurement rules.* | **Immutable Audit Trail Vault**: SHA-256 cryptographic logging of every officer action, committee score, and telemetry timestamp. | 🔒 `CVC Audit Trail Vault` |
 
 ---
 
@@ -79,6 +81,8 @@ SIH-2026-STARTUP-PS/
 │   │   ├── scale/                # Module 06: Scale Decision & GeM Transition
 │   │   ├── impact/               # Module 07: Cross-pilot KPI & Fiscal RoI Analytics
 │   │   ├── validation/           # Module 08: 3rd-Party Verification Certificates
+│   │   ├── templates/            # Module 09: Standardized Procurement Template Manager
+│   │   ├── startup/              # Module 10: Startup Innovator & Telemetry Workspace
 │   │   ├── layout/               # Header, Sidebar & SIH Demo Walkthrough Navigator
 │   │   ├── modals/               # AI Radar, GeM Sanction Dossier & Audit Logs
 │   │   ├── notifications/        # SLA and risk alert feeds
@@ -87,7 +91,7 @@ SIH-2026-STARTUP-PS/
 │   │   └── mockData.ts           # Maharashtra & Pune Municipal realistic dataset
 │   ├── types/
 │   │   └── procurement.ts        # Comprehensive TypeScript domain models
-│   ├── App.tsx                   # Master application router
+│   ├── App.tsx                   # Master application router with Dual Role Switcher
 │   ├── index.css                 # Clean government light theme & Plus Jakarta Sans
 │   └── main.tsx                  # Application entrypoint
 ├── README.md                     # 📖 Official SIH Project Documentation

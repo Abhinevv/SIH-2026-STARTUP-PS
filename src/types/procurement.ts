@@ -1,22 +1,26 @@
 export type NavigationTab = 
-  | 'dashboard'
-  | 'challenges'
-  | 'matching'
-  | 'evaluations'
-  | 'pilots'
-  | 'kpi-impact'
-  | 'validation'
+  | 'dashboard' 
+  | 'challenges' 
+  | 'matching' 
+  | 'evaluations' 
+  | 'pilots' 
+  | 'kpi-impact' 
+  | 'validation' 
   | 'scale'
-  | 'notifications'
+  | 'templates'
+  | 'startup-portal'
+  | 'notifications' 
   | 'settings';
 
+export type UserRole = 'officer' | 'startup';
+
 export type PipelineStageKey = 
-  | 'problem'
-  | 'challenge'
-  | 'matching'
-  | 'evaluation'
-  | 'pilot'
-  | 'validation'
+  | 'problem' 
+  | 'challenge' 
+  | 'matching' 
+  | 'evaluation' 
+  | 'pilot' 
+  | 'validation' 
   | 'scale';
 
 export interface PipelineStageInfo {
@@ -33,20 +37,20 @@ export interface KPIBaseline {
   metric: string;
   baseline: string;
   target: string;
-  direction: 'reduction' | 'increase' | 'optimization';
+  direction: 'reduction' | 'increase';
   unit: string;
   measurementMethod: string;
 }
 
 export interface Challenge {
   id: string;
-  code: string;
+  code: string; // e.g. MAHA-2026-014
   title: string;
   department: string;
   ministry: string;
   budgetInLakhs: number;
   pilotDurationDays: number;
-  stage: PipelineStageKey;
+  stage: 'problem' | 'formulated' | 'matching' | 'evaluation' | 'pilot' | 'validated' | 'scaled';
   statusText: string;
   rawProblemText: string;
   problemStatement: string;
@@ -67,6 +71,15 @@ export interface Challenge {
   createdAt: string;
 }
 
+export interface StartupScores {
+  technologyMatch: number;      // 0-100
+  problemDomainMatch: number;   // 0-100
+  budgetFit: number;            // 0-100
+  pilotReadiness: number;       // 0-100
+  relevantExperience: number;   // 0-100
+  pastPerformance: number;      // 0-100
+}
+
 export interface StartupMatch {
   id: string;
   startupName: string;
@@ -74,16 +87,9 @@ export interface StartupMatch {
   dpiitRecognitionNo: string;
   city: string;
   state: string;
-  overallMatchScore: number;
+  overallMatchScore: number;    // 0-100
   riskLevel: 'LOW' | 'MEDIUM' | 'HIGH';
-  scores: {
-    technologyMatch: number;
-    problemDomainMatch: number;
-    budgetFit: number;
-    pilotReadiness: number;
-    relevantExperience: number;
-    pastPerformance: number;
-  };
+  scores: StartupScores;
   keyTechStack: string[];
   positiveEvidence: string[];
   riskFlags: string[];
@@ -93,15 +99,23 @@ export interface StartupMatch {
     startupCapability: string;
   }[];
   municipalDeploymentsCount: number;
-  isShortlisted?: boolean;
+  isShortlisted: boolean;
 }
 
-export interface ExpertScoreItem {
+export interface EvaluationCriterion {
   name: string;
   weight: number;
-  score: number;
+  score: number; // 0-100
   benchmark: number;
   comments: string;
+}
+
+export interface PanelMemberSignOff {
+  name: string;
+  designation: string;
+  role: string;
+  scoreGiven: number;
+  signedAt: string;
 }
 
 export interface ExpertEvaluationData {
@@ -109,27 +123,21 @@ export interface ExpertEvaluationData {
   startupId: string;
   startupName: string;
   overallScore: number;
-  recommendationStatus: 'RECOMMENDED_FOR_PILOT' | 'NEEDS_REVISION' | 'REJECTED';
-  criteria: ExpertScoreItem[];
-  panelMembers: {
-    name: string;
-    designation: string;
-    role: string;
-    scoreGiven: number;
-    signedAt: string;
-  }[];
+  recommendationStatus: 'RECOMMENDED_FOR_PILOT' | 'CONDITIONAL_APPROVAL' | 'REJECTED';
+  criteria: EvaluationCriterion[];
+  panelMembers: PanelMemberSignOff[];
   consensusRemarks: string;
-  sanctionRecommendedAmount: number;
+  sanctionRecommendedAmount: number; // In Lakhs
 }
 
-export interface PilotKPIItem {
+export interface PilotKPIVariance {
   id: string;
   metric: string;
   baselineVal: number;
   currentVal: number;
   targetVal: number;
   unit: string;
-  direction: 'down' | 'up';
+  direction: 'up' | 'down';
   changePercent: number;
   targetPercent: number;
   status: 'exceeded' | 'on-track' | 'lagging';
@@ -137,7 +145,7 @@ export interface PilotKPIItem {
   verifiedByThirdParty: boolean;
 }
 
-export interface PilotTimelineMilestone {
+export interface PilotTimelineStep {
   id: number;
   title: string;
   stageName: string;
@@ -147,34 +155,36 @@ export interface PilotTimelineMilestone {
   officerNote?: string;
 }
 
+export interface PilotTelemetryLog {
+  timestamp: string;
+  sensorNode: string;
+  metric: string;
+  value: string;
+  status: 'optimal' | 'warning' | 'normal';
+}
+
 export interface PilotProject {
-  id: string;
+  id: string; // e.g. PLT-2026-088
   challengeCode: string;
   challengeTitle: string;
   department: string;
   startupName: string;
-  pilotStatus: 'Active' | 'Under Review' | 'Completed' | 'Milestone Overdue';
+  pilotStatus: 'Active' | 'Under Review' | 'Completed' | 'Suspended';
   dayElapsed: number;
   dayTotal: number;
   sanctionedBudgetLakhs: number;
   utilizedBudgetLakhs: number;
-  kpis: PilotKPIItem[];
-  timeline: PilotTimelineMilestone[];
-  telemetryLogs: {
-    timestamp: string;
-    sensorNode: string;
-    metric: string;
-    value: string;
-    status: 'normal' | 'optimal' | 'alert';
-  }[];
+  kpis: PilotKPIVariance[];
+  timeline: PilotTimelineStep[];
+  telemetryLogs: PilotTelemetryLog[];
 }
 
 export interface ScaleReadinessData {
   pilotId: string;
   challengeTitle: string;
   startupName: string;
-  scaleReadinessScore: number;
-  readinessLabel: 'READY TO SCALE' | 'CONDITIONAL SCALE' | 'PILOT EXTENSION REQUIRED';
+  scaleReadinessScore: number; // e.g. 87
+  readinessLabel: 'READY TO SCALE' | 'NEEDS_FURTHER_EVALUATION' | 'PILOT_FAILED';
   dimensionScores: {
     technicalFeasibility: number;
     kpiAchievement: number;
@@ -211,4 +221,18 @@ export interface AuditLogEntry {
   entity: string;
   referenceId: string;
   hash: string;
+}
+
+export interface ProcurementTemplate {
+  id: string;
+  category: 'problem_statement' | 'evaluation_criteria' | 'contract_sla' | 'scale_memorandum';
+  title: string;
+  gfrRule: string;
+  description: string;
+  complianceLevel: string;
+  lastUpdated: string;
+  sections: {
+    heading: string;
+    content: string;
+  }[];
 }

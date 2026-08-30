@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavigationTab, StartupMatch } from './types/procurement';
+import { NavigationTab, StartupMatch, UserRole } from './types/procurement';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { DemoStoryNavigator } from './components/layout/DemoStoryNavigator';
@@ -12,6 +12,8 @@ import { PilotDashboardView } from './components/pilot/PilotDashboardView';
 import { KPIImpactView } from './components/impact/KPIImpactView';
 import { ValidationView } from './components/validation/ValidationView';
 import { ScaleDecisionView } from './components/scale/ScaleDecisionView';
+import { TemplateManagerView } from './components/templates/TemplateManagerView';
+import { StartupPortalView } from './components/startup/StartupPortalView';
 import { NotificationsView } from './components/notifications/NotificationsView';
 import { SettingsView } from './components/settings/SettingsView';
 
@@ -23,6 +25,7 @@ import { mockStartups } from './data/mockData';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<NavigationTab>('dashboard');
+  const [currentRole, setCurrentRole] = useState<UserRole>('officer');
   
   // Modals state
   const [isAIInsightsOpen, setIsAIInsightsOpen] = useState(false);
@@ -33,6 +36,11 @@ export function App() {
 
   const handleNavigate = (tab: NavigationTab) => {
     setActiveTab(tab);
+    if (tab === 'startup-portal') {
+      setCurrentRole('startup');
+    } else {
+      setCurrentRole('officer');
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -45,6 +53,16 @@ export function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
       {/* Top Enterprise Government Header */}
       <Header
+        currentRole={currentRole}
+        onChangeRole={(role) => {
+          setCurrentRole(role);
+          if (role === 'startup') {
+            setActiveTab('startup-portal');
+          } else {
+            setActiveTab('dashboard');
+          }
+        }}
+        onNavigateTab={handleNavigate}
         onOpenNotifications={() => handleNavigate('notifications')}
         onOpenAuditLog={() => setIsAuditLogOpen(true)}
         onOpenAIInsights={() => setIsAIInsightsOpen(true)}
@@ -64,6 +82,8 @@ export function App() {
         <Sidebar
           activeTab={activeTab}
           onSelectTab={handleNavigate}
+          currentRole={currentRole}
+          onChangeRole={setCurrentRole}
         />
 
         {/* Dynamic Main Workspace Content */}
@@ -124,6 +144,20 @@ export function App() {
                 onNavigateTab={handleNavigate}
                 onOpenDossier={() => setIsDossierOpen(true)}
                 onOpenAuditLog={() => setIsAuditLogOpen(true)}
+              />
+            )}
+
+            {activeTab === 'templates' && (
+              <TemplateManagerView
+                onNavigateTab={handleNavigate}
+                onOpenDossier={() => setIsDossierOpen(true)}
+              />
+            )}
+
+            {activeTab === 'startup-portal' && (
+              <StartupPortalView
+                onNavigateTab={handleNavigate}
+                onOpenExplainability={() => setIsExplainabilityOpen(true)}
               />
             )}
 

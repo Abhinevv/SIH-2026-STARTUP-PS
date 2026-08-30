@@ -5,7 +5,8 @@ import {
   ExpertEvaluationData, 
   ScaleReadinessData, 
   PipelineStageInfo,
-  AuditLogEntry 
+  AuditLogEntry,
+  ProcurementTemplate
 } from '../types/procurement';
 
 export const mockPipelineStages: PipelineStageInfo[] = [
@@ -389,3 +390,62 @@ export const mockAIIntelligenceSummary = {
     { id: 'ins-4', type: 'match', title: 'High Semantic Density in Maharashtra Startups', description: 'Over 28 Maharashtra-registered DPIIT startups matched with >85% weighted compatibility for smart municipal tenders.', severity: 'info' }
   ]
 };
+
+export const mockProcurementTemplates: ProcurementTemplate[] = [
+  {
+    id: 'tpl-01',
+    category: 'problem_statement',
+    title: 'GFR Rule 194 Problem Statement Formulation Template',
+    gfrRule: 'GFR 2017 Rule 194 (Procurement of Innovation)',
+    complianceLevel: 'Standard Statutory Format',
+    lastUpdated: 'Aug 2026 (MSInS Gazette)',
+    description: 'Outcome-oriented problem formulation template specifying quantifiable baseline metrics, verification methodology, and operational constraints without vendor-specific bias.',
+    sections: [
+      { heading: '1. Departmental Operational Bottleneck', content: 'Define the current civic pain point in terms of citizen impact, financial leakage, and resource under-utilization.' },
+      { heading: '2. Baseline-to-Target KPI Formulation', content: 'Establish minimum 3 quantifiable metrics with explicit direction of improvement (reduction/increase), measurement tools, and verification frequency.' },
+      { heading: '3. Controlled Sandbox Pilot Parameters', content: 'Specify geographic boundaries (e.g. 3 municipal wards), duration ceiling (60-120 days), and maximum budget allocation under GFR 194 (up to ₹50 Lakhs).' }
+    ]
+  },
+  {
+    id: 'tpl-02',
+    category: 'contract_sla',
+    title: 'Tripartite Sandbox Pilot Agreement & Milestone Escrow SLA',
+    gfrRule: 'GFR Rule 194 • Startup India Sandbox Model',
+    complianceLevel: 'Standard Legal Model',
+    lastUpdated: 'Jul 2026 (MeitY/DPIIT)',
+    description: 'Legal agreement between Government Department, DPIIT Startup, and Incubator/Testbed defining IP ownership, MeitY Indian Cloud data localisation, and milestone tranche escrow disbursements.',
+    sections: [
+      { heading: '1. Intellectual Property & Code Ownership', content: 'Background IP remains 100% with the startup; Municipal entity receives non-exclusive perpetual license for pilot telemetry and custom integration adapters.' },
+      { heading: '2. Milestone Escrow Disbursement Schedule', content: 'Tranche 1 (30% on Prototype Onboarding), Tranche 2 (40% on 50% Milestone Telemetry Clearance), Tranche 3 (30% on Final Independent Verification).' },
+      { heading: '3. Data Localisation & ISO 27001 Cloud Clause', content: 'All municipal datasets, GPS telematics, and video streams must strictly reside within MeitY-empanelled India Data Centers with AES-256 encryption.' }
+    ]
+  },
+  {
+    id: 'tpl-03',
+    category: 'evaluation_criteria',
+    title: '6-Factor Multi-Criteria Scoring & Expert Panel Matrix',
+    gfrRule: 'DPIIT Standing Evaluation Panel Rules',
+    complianceLevel: 'CVC Audit Compliant',
+    lastUpdated: 'Aug 2026',
+    description: 'Standardized evaluation rubric weighting Technical Feasibility (25%), Novelty (20%), RoI (15%), Scalability (15%), Security (15%), and Pilot Readiness (10%).',
+    sections: [
+      { heading: '1. Technical Architecture & Algorithmic Robustness (25%)', content: 'Evaluates algorithm throughput, graph computation latency, edge resilience, and system uptime guarantees.' },
+      { heading: '2. Cost Effectiveness & Commercial RoI (15%)', content: 'Assesses total cost of pilot versus projected annual departmental savings and payback period.' },
+      { heading: '3. Cybersecurity & Data Governance (15%)', content: 'Requires STQC clearance, GDPR/DPDP 2023 compliance, and role-based access control (RBAC).' }
+    ]
+  },
+  {
+    id: 'tpl-04',
+    category: 'scale_memorandum',
+    title: 'Formal Scale Sanction Order & Direct GeM Onboarding Memo',
+    gfrRule: 'GFR Rule 149 & Rule 194 Transition',
+    complianceLevel: 'Gazette Sanction Model',
+    lastUpdated: 'Aug 2026 (Ministry of Commerce)',
+    description: 'Official Government Order signed by authorized IAS officers authorizing state-wide rollout and direct custom catalog onboarding on Government e-Marketplace (GeM / MahaGEMS).',
+    sections: [
+      { heading: '1. Sandbox Performance Certification', content: 'Details verified KPI achievements against baseline targets backed by independent third-party auditor signatures.' },
+      { heading: '2. Direct GeM Custom Category Creation', content: 'Authorizes creation of customized product/service category on GeM under innovation scale exemption without re-tendering.' },
+      { heading: '3. Pan-State Rollout Allocation', content: 'Allocates multi-ULB budget cap and specifies SLA terms for statewide municipal deployment.' }
+    ]
+  }
+];

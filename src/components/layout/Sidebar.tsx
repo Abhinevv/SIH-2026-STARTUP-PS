@@ -8,15 +8,19 @@ import {
   TrendingUp, 
   ShieldCheck, 
   Scale, 
+  FileText,
+  Rocket,
   BellRing, 
   SlidersHorizontal, 
   Shield,
 } from 'lucide-react';
-import { NavigationTab } from '../../types/procurement';
+import { NavigationTab, UserRole } from '../../types/procurement';
 
 interface SidebarProps {
   activeTab: NavigationTab;
   onSelectTab: (tab: NavigationTab) => void;
+  currentRole: UserRole;
+  onChangeRole: (role: UserRole) => void;
   pendingEvaluationCount?: number;
   activePilotsCount?: number;
   alertsCount?: number;
@@ -25,11 +29,13 @@ interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({
   activeTab,
   onSelectTab,
+  currentRole,
+  onChangeRole,
   pendingEvaluationCount = 9,
   activePilotsCount = 6,
   alertsCount = 3,
 }) => {
-  const mainNavItems = [
+  const officerNavItems = [
     {
       id: 'dashboard' as NavigationTab,
       label: 'Dashboard',
@@ -92,9 +98,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badgeClass: 'bg-emerald-100 text-emerald-900 border-emerald-300 font-extrabold animate-pulse',
       iconColor: 'text-amber-700',
     },
+    {
+      id: 'templates' as NavigationTab,
+      label: 'Template Manager',
+      icon: FileText,
+      badge: '4 GFR',
+      badgeClass: 'bg-blue-50 text-blue-700 border-blue-200 font-semibold',
+      iconColor: 'text-blue-700',
+    },
   ];
 
   const secondaryNavItems = [
+    {
+      id: 'startup-portal' as NavigationTab,
+      label: 'Startup Innovator Portal',
+      icon: Rocket,
+      badge: 'RouteAI',
+      badgeClass: 'bg-cyan-50 text-cyan-800 border-cyan-300 font-bold',
+      iconColor: 'text-cyan-600',
+    },
     {
       id: 'notifications' as NavigationTab,
       label: 'Notifications',
@@ -143,14 +165,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
             Command Modules
           </div>
 
-          {mainNavItems.map((item) => {
+          {officerNavItems.map((item) => {
             const isActive = activeTab === item.id;
             const Icon = item.icon;
 
             return (
               <button
                 key={item.id}
-                onClick={() => onSelectTab(item.id)}
+                onClick={() => {
+                  if (currentRole === 'startup' && item.id !== 'startup-portal') {
+                    onChangeRole('officer');
+                  }
+                  onSelectTab(item.id);
+                }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all group cursor-pointer ${
                   isActive
                     ? 'bg-blue-600 text-white shadow-sm font-bold'
@@ -192,7 +219,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             return (
               <button
                 key={item.id}
-                onClick={() => onSelectTab(item.id)}
+                onClick={() => {
+                  if (item.id === 'startup-portal') {
+                    onChangeRole('startup');
+                  }
+                  onSelectTab(item.id);
+                }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all group cursor-pointer ${
                   isActive
                     ? 'bg-blue-600 text-white font-bold shadow-sm'
@@ -214,30 +246,55 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
 
-      {/* Bottom Officer Profile Card */}
+      {/* Bottom Profile Card */}
       <div className="p-3.5 m-3.5 bg-slate-50 rounded-2xl border border-slate-200 shadow-2xs">
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <div className="w-10 h-10 rounded-xl bg-blue-100 border border-blue-300 flex items-center justify-center text-blue-950 font-bold text-sm shadow-xs">
-              RV
+        {currentRole === 'officer' ? (
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-10 h-10 rounded-xl bg-blue-100 border border-blue-300 flex items-center justify-center text-blue-950 font-bold text-sm shadow-xs">
+                RV
+              </div>
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-white" title="Active Clearance" />
             </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-white" title="Active Clearance" />
+            <div className="flex-1 min-w-0">
+              <div className="text-[13px] font-extrabold text-slate-900 truncate">
+                Shri Rajesh Verma, IAS
+              </div>
+              <div className="text-[11px] text-slate-500 truncate font-medium">
+                Joint Secretary (Procurement)
+              </div>
+              <div className="flex items-center gap-1 mt-0.5">
+                <Shield className="w-3 h-3 text-amber-600" />
+                <span className="text-[10px] text-amber-800 font-mono font-bold">
+                  Level-1 Approver (MahaGEMS)
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-[13px] font-extrabold text-slate-900 truncate">
-              Shri Rajesh Verma, IAS
+        ) : (
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-10 h-10 rounded-xl bg-indigo-100 border border-indigo-300 flex items-center justify-center text-indigo-950 font-bold text-sm shadow-xs">
+                RA
+              </div>
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-cyan-500 rounded-full ring-2 ring-white" title="DPIIT Verified" />
             </div>
-            <div className="text-[11px] text-slate-500 truncate font-medium">
-              Joint Secretary (Public Procurement)
-            </div>
-            <div className="flex items-center gap-1 mt-0.5">
-              <Shield className="w-3 h-3 text-amber-600" />
-              <span className="text-[10px] text-amber-800 font-mono font-bold">
-                Level-1 Approver (GeM / MahaGEMS)
-              </span>
+            <div className="flex-1 min-w-0">
+              <div className="text-[13px] font-extrabold text-slate-900 truncate">
+                RouteAI Technologies
+              </div>
+              <div className="text-[11px] text-slate-500 truncate font-medium">
+                DPIIT Registered Startup
+              </div>
+              <div className="flex items-center gap-1 mt-0.5">
+                <Rocket className="w-3 h-3 text-cyan-600" />
+                <span className="text-[10px] text-cyan-800 font-mono font-bold">
+                  Active Sandbox Pilot
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </aside>
   );
